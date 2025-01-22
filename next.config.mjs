@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: 'export',
   basePath:
-    process.env.NODE_ENV === "production" ? "/mayfestproductions.com" : "",
+    process.env.NODE_ENV === 'production' ? '/mayfestproductions.com' : '',
   assetPrefix:
-    process.env.NODE_ENV === "production" ? "/mayfestproductions.com/" : "",
+    process.env.NODE_ENV === 'production' ? '/mayfestproductions.com/' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "nextjs.org",
-        pathname: "/icons/**",
+        protocol: 'https',
+        hostname: 'nextjs.org',
+        pathname: '/icons/**',
       },
     ],
   },
