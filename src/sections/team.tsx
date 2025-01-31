@@ -1,5 +1,102 @@
 'use client';
 
+import { Section } from '@/components';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+import GradientDivider from '../components/team/gradient-divider';
+import TeamsGrid from '../components/team/teams-grid';
+
+const variants = {
+  initial: {},
+  animate: {
+    transition: {
+      delay: 1,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const childVariants = {
+  initial: { opacity: 0, scale: 5 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0, 0.71, 0.2, 1.0],
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const grandchildVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: {
+    opacity: 0.8,
+    y: 0,
+  },
+};
+
+export default function Team() {
+  return (
+    <div id="our-team" className="my-16">
+      <motion.div
+        className="relative h-[480px] overflow-hidden"
+        variants={variants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 'all' }}
+      >
+        <GradientDivider top height={32} />
+        <img
+          src="/team-background.jpg"
+          alt="Mayfest Productions Teams Background"
+          className="w-full h-full object-cover object-center"
+        />
+        <GradientDivider bottom height={128} />
+        <motion.div
+          className="absolute inset-0 flex flex-col items-center justify-center bg-black p-4"
+          variants={childVariants}
+        >
+          <h2 className="text-[128px] font-bold text-center text-transparent bg-[url('/team-background.jpg')] bg-[100%] bg-center bg-clip-text text-opacity-30 md:text-[64px]">
+            Meet Mayfest
+          </h2>
+          <motion.p
+            className="text-white text-lg max-w-2xl text-center"
+            variants={grandchildVariants}
+          >
+            The organization is comprised of{' '}
+            <span className="text-purple-300 font-medium">10 committees</span>,
+            each with its own core responsibilities and cross-committee
+            collaborations that translate directly to the success of our events.
+          </motion.p>
+        </motion.div>
+      </motion.div>
+
+      <Section className="mx-auto">
+        <TeamsGrid />
+        <p className="text-center mt-4 text-sm opacity-50">
+          click on a team for more info
+        </p>
+        <div className="flex justify-center items-center mt-4">
+          <a
+            href="/roster/"
+            className="flex items-center gap-1 text-purple-200 px-2 py-1 rounded-lg transition duration-150 hover:bg-white/10 active:bg-white/20"
+          >
+            <span>View Full Historical Roster</span>
+            <ChevronRightIcon className="w-4 h-4 stroke-2" />
+          </a>
+        </div>
+      </Section>
+    </div>
+  );
+}
+
+
+
+/*
+'use client';
+
 import { Section, mobile } from '@/components';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
@@ -159,7 +256,6 @@ export default function Team() {
           </Text>
         </TitleContainer>
       </Heading>
-      {/* MARKER ADDED */}
       <Section style={{ margin: '0 auto' }}>
         <TeamsGrid />
         <Note>click on a team for more info</Note>
@@ -173,3 +269,4 @@ export default function Team() {
     </Container>
   );
 }
+*/
