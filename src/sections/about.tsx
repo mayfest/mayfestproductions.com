@@ -10,10 +10,7 @@ export default function About() {
           At Mayfest Productions,
         </p>
         <p className="font-bold text-5xl md:text-6xl text-white">
-          <span className="inline-block mx-2">WE</span>
-          <span className="inline-block mx-2">DO</span>
-          <span className="inline-block mx-2">DILLO</span>
-          <span className="inline-block mx-2">DAY.</span>
+          WE DO DILLO DAY
         </p>
       </div>
 
